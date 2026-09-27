@@ -24,7 +24,16 @@ ITSM Incident Event Log project/
 ├── SQL Queries/            <- one .sql file per analysis question
 └── Insights/                <- one .md file per analysis question, with output + findings
 ```
+## Key Findings (TL;DR)
 
+- **SLA compliance is a real problem:** Only 63.42% of incidents (15,803 of 24,918) met their SLA — about 1 in 3 incidents breach their deadline.
+- **Priority classification is inconsistent with actual urgency:** High (99.51%) and Critical (98.15%) priority incidents breach SLA almost every time, while Low priority breaches only 15.89%. Critical incidents also take *longer* to resolve on average (265.62 hrs) than Moderate (173.94 hrs) and High (151.97 hrs) — suggesting tight deadlines for urgent tickets aren't being met despite faster-than-average handling.
+- **Massive team performance gap:** Best-performing team (Group 64) breaches only 10.89% of SLAs; worst-performing team (Group 10) breaches 74.93% — nearly 7x worse, despite handling similar ticket volumes. This points to a team-specific issue (staffing/process), not a company-wide one.
+- **Incident volume is heavily front-loaded:** 90%+ of all incidents occurred in just 3 months (March–May 2016), then dropped to single/double digits per month for the rest of the dataset — worth investigating with ops teams as a likely one-off event or major system rollout.
+- **A handful of categories drive most incidents and most delay:** Just 5 of 50+ categories account for ~55% of all incident volume. Separately, Category 34 has by far the worst average resolution time (1,325.84 hrs / ~55 days) — nearly 2x the next-worst category — flagging a likely structural bottleneck (vendor dependency, hardware procurement, etc.).
+- **Nearly half of all incidents are misrouted initially:** 45.63% of incidents required at least one reassignment before resolution, pointing to a gap in initial ticket categorization/routing.
+- **Fix quality is strong once resolved:** Only 1.1% of incidents were ever reopened — and reopen rate is unrelated to resolution speed (the slowest categories aren't the ones getting reopened), meaning these are two distinct problems requiring separate fixes.
+- **Reporting channel is almost entirely phone-based:** 99.1% of incidents come through phone contact, with self-service and other digital channels seeing negligible adoption — a potential digital-transformation opportunity.
 ---
 
 ## Data Cleaning — Step by Step
